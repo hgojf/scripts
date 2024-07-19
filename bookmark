@@ -1,0 +1,2 @@
+#!/bin/sh
+xdotool type --delay 0 $(dmenu -l 50 < $1 | cut -d '#' -f 1)
