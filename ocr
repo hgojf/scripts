@@ -1,2 +1,0 @@
-#!/bin/sh
-scrot -s -F - | tesseract - - | xclip -selection c

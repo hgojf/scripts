@@ -1,2 +1,0 @@
-#!/bin/sh
-xdotool type --delay 0 "https://web.archive.org/web/*/$(dmenu < /dev/null)"
