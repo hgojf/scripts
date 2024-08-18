@@ -5,7 +5,6 @@ if [ "$#" -ne 1 ]; then
 fi
 
 if [ "$(id -u)" -eq 0 -a "$(id -u $1)" -ne 0 ]; then
-	echo hi
 	su "$1" /usr/local/bin/impermanence "$1"
 	exit $?
 fi
