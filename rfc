@@ -1,2 +1,2 @@
 #!/bin/sh
-ftp -o - https://www.ietf.org/rfc/rfc$1.txt 2>/dev/null | less 
+ftp -o - https://www.ietf.org/rfc/rfc$1.txt 2>/dev/null | tr -d "\\014" | less 
