@@ -1,7 +1,7 @@
 .PHONY: all install
 
 PREFIX ?= /usr/local
-SCRIPTS = bookmark impermanence pass rfc
+SCRIPTS = alarm bookmark impermanence pass rfc
 
 all: #so that 'make' doesnt try to install anything
 

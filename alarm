@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "mpv --quiet /var/music/alarm.opus" | at + $@
