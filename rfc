@@ -1,2 +1,22 @@
 #!/bin/sh
-ftp -o - https://www.ietf.org/rfc/rfc$1.txt 2>/dev/null | tr -d "\\014" | less 
+usage() {
+	echo "usage: rfc [-s] number" 1>&2
+	exit 2
+}
+
+fmt="rfc"
+while getopts s name
+do
+	case $name in
+	s)	fmt="std/std" ;;
+	?) usage ;;
+	esac
+done
+
+shift $(($OPTIND - 1))
+
+if [ $# -ne 1 ]; then
+	usage
+fi
+
+ftp -o - "https://www.ietf.org/rfc/${fmt}$1.txt" 2>/dev/null | tr -d "\\014" | less
